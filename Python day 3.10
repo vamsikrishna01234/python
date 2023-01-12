@@ -1,0 +1,52 @@
+print('*********************************************')
+		cash_in = int(input('ENTER AMOUNT YOU WANT TO LODGE: '))
+		print('*********************************************')
+		print('---------------------------------------------')
+		print()
+		if cash_in%10 != 0:
+			print('----------------------------------------------------')
+			print('****************************************************')
+			print('AMOUNT YOU WANT TO LODGE MUST TO MATCH 10 $ NOTES')
+			print('****************************************************')
+			print('----------------------------------------------------')
+		else:
+			amounts[n] = amounts[n] + cash_in
+			print('----------------------------------------')
+			print('****************************************')
+			print('YOUR NEW BALANCE IS: ', amounts[n], '$')
+			print('****************************************')
+			print('----------------------------------------')
+	elif response == 'p':
+		print('-----------------------------')
+		print('*****************************')
+		new_pin = str(getpass.getpass('ENTER A NEW PIN: '))
+		print('*****************************')
+		print('-----------------------------')
+		if new_pin.isdigit() and new_pin != pins[n] and len(new_pin) == 4:
+			print('------------------')
+			print('******************')
+			new_ppin = str(getpass.getpass('CONFIRM NEW PIN: '))
+			print('*******************')
+			print('-------------------')
+			if new_ppin != new_pin:
+				print('------------')
+				print('************')
+				print('PIN MISMATCH')
+				print('************')
+				print('------------')
+			else:
+				pins[n] = new_pin
+				print('NEW PIN SAVED')
+		else:
+			print('-------------------------------------')
+			print('*************************************')
+			print('   NEW PIN MUST CONSIST OF 4 DIGITS \nAND MUST BE DIFFERENT TO PREVIOUS PIN')
+			print('*************************************')
+			print('-------------------------------------')
+	elif response == 'q':
+		exit()
+	else:
+		print('------------------')
+		print('******************')
+		print('RESPONSE NOT VALID')
+		print('******************')
